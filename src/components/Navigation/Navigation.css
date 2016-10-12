@@ -7,39 +7,16 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-.root {
-  margin: 0;
-}
+.img_logo{color:#fff;width: 120px;margin:5px 0 0 40px;}
+.nav{position:relative;z-index:500;margin-top:19px}
+.menu_block{position:relative;margin:0 40px 0 0;float: right;}
+.block_nav{clear:both;display:inline-block;float:right;margin:50px 0 0;position:absolute;right:0;top:30px;height:355px;z-index:200;width:285px}
+.listItem{display:inline-block;width:100%;list-style: none}
+.listItem a{line-height:40px;font-size:21px;margin-top:8px;color:#fff;font-weight:700;text-align:right;float:right}
+.listItem a:hover{text-decoration:underline}
+.navText{text-align: right}
+.navText span{color:#000;display:inline-block;font-size:14px;margin-top:27px}
 
-.link {
-  display: inline-block;
-  padding: 3px 8px;
-  text-decoration: none;
-  font-size: 1.125em; /* ~18px */
-}
+.nav .menu{padding-right:35px;line-height:20px;height:20px;font-weight:700;margin-top:10px;color:#fff;float:right;}
 
-.link,
-.link:active,
-.link:visited {
-  color: rgba(255, 255, 255, 0.6);
-}
 
-.link:hover {
-  color: rgba(255, 255, 255, 1);
-}
-
-.highlight {
-  margin-right: 8px;
-  margin-left: 8px;
-  border-radius: 3px;
-  background: rgba(0, 0, 0, 0.15);
-  color: #fff;
-}
-
-.highlight:hover {
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.spacer {
-  color: rgba(255, 255, 255, 0.3);
-}

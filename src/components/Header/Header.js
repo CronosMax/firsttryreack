@@ -10,26 +10,43 @@
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Header.css';
+import {Grid, Row} from 'react-bootstrap';
 import Link from '../Link';
 import Navigation from '../Navigation';
-import logoUrl from './logo-small.png';
 
-function Header() {
-  return (
-    <div className={s.root}>
-      <div className={s.container}>
-        <Navigation className={s.nav} />
-        <Link className={s.brand} to="/">
-          <img src={logoUrl} width="38" height="38" alt="React" />
-          <span className={s.brandTxt}>Your Company</span>
-        </Link>
-        <div className={s.banner}>
-          <h1 className={s.bannerTitle}>React hhhg</h1>
-          <p className={s.bannerDesc}>Complex web apps made easy</p>
-        </div>
-      </div>
-    </div>
-  );
-}
+var Header = React.createClass({
+  getInitialState: function() {
+    return {
+      isVisible: false
+    };
+  },
+
+  handleNavShow: function(stateNavValue) {
+    this.setState({
+      isVisible: stateNavValue
+    })
+  },
+
+  render: function(){
+    let displayLayout = s.header + ' ' + ((this.state.isVisible) ? s.menu_act : '');
+    return (
+      <Grid fluid className={displayLayout}>
+        <Row>
+          <img className={s.header__img} src={require('./img/bg.jpg')} alt="header_img" />
+        </Row>
+        <Grid bsStyle className={s.header__container}>
+          <Navigation navShow={this.handleNavShow} showed={this.state.isVisible} />
+        </Grid>
+        <Grid bsStyle className={s.header__bottom_h}>
+          <div className={s.header__bottom_h__title}>
+            <h1 className={s.header__h1}>ParkDrive</h1>
+            <p className={s.header__bottom_h__p}>Всеукраинская сеть автомобилей с пробегом</p>
+          </div>
+          <Link to="/project/parkdrive" className={s.header__bottom_h__button}>Посмотреть</Link>
+        </Grid>
+      </Grid>
+    );
+  }
+});
 
 export default withStyles(s)(Header);
